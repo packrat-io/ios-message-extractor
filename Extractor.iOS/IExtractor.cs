@@ -7,6 +7,6 @@ namespace Extractor.iOS
 {
     public interface IExtractor : IDisposable
     {
-        Task<IList<IMessage>> ExtractAsync(CancellationToken cancellationToken = default(CancellationToken), IProgress<ExtractProgress> progress = null);
+        Task<IList<IMessage>> ExtractAsync(CancellationToken cancellationToken = default(CancellationToken), IProgress<ExtractProgressInfo> progress = null);
     }
 }

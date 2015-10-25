@@ -7,7 +7,7 @@ namespace Extractor.iOS
     {
         string MessageId { get; }
 
-        int Index { get; }
+        int NaturalIndex { get; }
 
         DateTimeOffset Date { get; }
 

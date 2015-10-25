@@ -1,15 +1,15 @@
 ﻿namespace Extractor.iOS
 {
-    public struct ExtractProgress
+    public struct ExtractProgressInfo
     {
         public int CurrentStage { get; private set; }
-        public int CurrentStagePercent { get; private set; }
+        public double CurrentStagePercent { get; private set; }
         public string CurrentStageName { get; private set; }
         public int TotalStages { get; private set; }
 
-        public ExtractProgress(
+        public ExtractProgressInfo(
             int currentStage,
-            int currentStagePercent,
+            double currentStagePercent,
             string currentStageName,
             int totalStages)
         {

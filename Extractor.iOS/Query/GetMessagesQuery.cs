@@ -46,7 +46,7 @@ namespace Extractor.iOS.Query
             cancellationToken.ThrowIfCancellationRequested();
 
             var transformedMessages = new List<IosMessage>(rawMessages.Count);
-            rawMessages.ForEach(m => transformedMessages.Add(this.Transform(m)));
+            rawMessages.ForEach(m => transformedMessages[m.ROWID] = this.Transform(m));
 
             return transformedMessages;
         }
@@ -56,7 +56,7 @@ namespace Extractor.iOS.Query
             var message = new IosMessage()
             {
                 MessageId = stored.guid.ToString(),
-                Index = stored.ROWID,
+                NaturalIndex = stored.ROWID,
                 Text = stored.text,
                 Subject = stored.subject,
                 ServiceName = stored.service,

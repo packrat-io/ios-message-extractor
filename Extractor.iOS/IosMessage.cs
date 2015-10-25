@@ -19,7 +19,7 @@ namespace Extractor.iOS
 
         public string GroupId { get; internal set; }
 
-        public int Index { get; internal set; }
+        public int NaturalIndex { get; internal set; }
 
         public string MessageId { get; internal set; }
 

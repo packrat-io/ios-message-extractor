@@ -53,7 +53,7 @@
   <ItemGroup>
     <Compile Include="Entity\DbGroupChatMessage.cs" />
     <Compile Include="Entity\DbMessage.cs" />
-    <Compile Include="ExtractProgress.cs" />
+    <Compile Include="ExtractProgressInfo.cs" />
     <Compile Include="IExtractor.cs" />
     <Compile Include="IMessage.cs" />
     <Compile Include="IosExtractor.cs" />
