@@ -4,10 +4,11 @@ using System.Linq;
 using Extractor.iOS.Entity;
 using SQLite;
 using System;
+using System.Threading;
 
 namespace Extractor.iOS.Query
 {
-    internal sealed class GetMessagesQuery
+    internal sealed class GetMessagesQuery : IQuery<IList<IosMessage>>
     {
         private static readonly DateTimeOffset AppleEpoch =
             new DateTimeOffset(1970, 01, 01, 00, 00, 00, TimeSpan.Zero).AddSeconds(978307200);
@@ -21,8 +22,10 @@ namespace Extractor.iOS.Query
             this.myHandle = myHandle;
         }
 
-        public async Task<IList<IosMessage>> Execute()
+        public async Task<IList<IosMessage>> Execute(CancellationToken cancellationToken)
         {
+            cancellationToken.ThrowIfCancellationRequested();
+
             var rawMessages = await this.connection.QueryAsync<DbMessage>(@"
                 SELECT
                 m.ROWID, m.guid, m.text,
@@ -39,6 +42,8 @@ namespace Extractor.iOS.Query
                     x.item_type == 1 &&
                     x.other_handle > -1
                 )).ToList();
+
+            cancellationToken.ThrowIfCancellationRequested();
 
             var transformedMessages = new List<IosMessage>(rawMessages.Count);
             rawMessages.ForEach(m => transformedMessages.Add(this.Transform(m)));

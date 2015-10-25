@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\DbGroupChatMessage.cs" />
     <Compile Include="Entity\DbMessage.cs" />
     <Compile Include="ExtractProgress.cs" />
     <Compile Include="IExtractor.cs" />
@@ -58,7 +59,9 @@
     <Compile Include="IosExtractor.cs" />
     <Compile Include="IosMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Query\GetGroupConversationsQuery.cs" />
     <Compile Include="Query\GetMessagesQuery.cs" />
+    <Compile Include="Query\IQuery.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
