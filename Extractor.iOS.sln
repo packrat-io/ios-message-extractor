@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extractor.iOS", "Extractor.iOS.csproj", "{3BC608AD-622A-4E1B-8847-581B9E8F474B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extractor.iOS", "Extractor.iOS\Extractor.iOS.csproj", "{3BC608AD-622A-4E1B-8847-581B9E8F474B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extractor.iOS.Tests", "Extractor.iOS.Tests\Extractor.iOS.Tests.csproj", "{5EF779A2-C45A-449B-A1D8-0542C07F88AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{3BC608AD-622A-4E1B-8847-581B9E8F474B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BC608AD-622A-4E1B-8847-581B9E8F474B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BC608AD-622A-4E1B-8847-581B9E8F474B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EF779A2-C45A-449B-A1D8-0542C07F88AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EF779A2-C45A-449B-A1D8-0542C07F88AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EF779A2-C45A-449B-A1D8-0542C07F88AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EF779A2-C45A-449B-A1D8-0542C07F88AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
