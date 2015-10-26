@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Extractor.iOS
+namespace Extractor.iOS.Entity
 {
     public sealed class IosMessage : IMessage
     {

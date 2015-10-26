@@ -45,6 +45,7 @@ namespace Extractor.iOS.Query
 
             cancellationToken.ThrowIfCancellationRequested();
 
+            // Transform messages to friendlier representation
             var transformedMessages = new List<IosMessage>(rawMessages.Count);
             rawMessages.ForEach(m => transformedMessages[m.ROWID] = this.Transform(m));
 

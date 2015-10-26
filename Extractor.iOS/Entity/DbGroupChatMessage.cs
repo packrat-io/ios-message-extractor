@@ -1,6 +1,6 @@
 ﻿namespace Extractor.iOS.Entity
 {
-    internal class DbGroupChatMessage
+    internal sealed class DbGroupChatMessage
     {
         public int message_id { get; set; }
 

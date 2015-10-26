@@ -9,10 +9,10 @@ namespace Extractor.iOS.Query
     internal sealed class GetGroupConversationsQuery : IQuery<List<DbGroupChatMessage>>
     {
         private readonly SQLiteAsyncConnection connection;
-        private readonly string myHandle;
 
         public GetGroupConversationsQuery(SQLiteAsyncConnection connection)
         {
+            this.connection = connection;
         }
 
         public Task<List<DbGroupChatMessage>> Execute(CancellationToken cancellationToken)

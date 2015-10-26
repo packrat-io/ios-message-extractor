@@ -2,7 +2,7 @@
 
 namespace Extractor.iOS.Entity
 {
-    internal class DbMessage
+    internal sealed class DbMessage
     {
         public int ROWID { get; set; }
 
