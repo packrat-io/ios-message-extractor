@@ -8,7 +8,7 @@ using System.Threading;
 
 namespace Extractor.iOS.Query
 {
-    internal sealed class GetMessagesQuery : IQuery<IList<IosMessage>>
+    internal sealed class GetMessagesQuery : IQuery<List<IosMessage>>
     {
         private static readonly DateTimeOffset AppleEpoch =
             new DateTimeOffset(1970, 01, 01, 00, 00, 00, TimeSpan.Zero).AddSeconds(978307200);
@@ -22,7 +22,7 @@ namespace Extractor.iOS.Query
             this.myHandle = myHandle;
         }
 
-        public async Task<IList<IosMessage>> Execute(CancellationToken cancellationToken)
+        public async Task<List<IosMessage>> Execute(CancellationToken cancellationToken)
         {
             cancellationToken.ThrowIfCancellationRequested();
 
@@ -47,7 +47,7 @@ namespace Extractor.iOS.Query
 
             // Transform messages to friendlier representation
             var transformedMessages = new List<IosMessage>(rawMessages.Count);
-            rawMessages.ForEach(m => transformedMessages[m.ROWID] = this.Transform(m));
+            rawMessages.ForEach(m => transformedMessages.Insert(m.ROWID, this.Transform(m)));
 
             return transformedMessages;
         }

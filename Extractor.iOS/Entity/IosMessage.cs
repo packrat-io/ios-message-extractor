@@ -5,7 +5,7 @@ namespace Extractor.iOS.Entity
 {
     public sealed class IosMessage : IMessage
     {
-        public string AttachmentId { get; internal set; }
+        public IList<IAttachment> Attachments { get; internal set; } = new List<IAttachment>();
 
         public DateTimeOffset Date { get; internal set; }
 

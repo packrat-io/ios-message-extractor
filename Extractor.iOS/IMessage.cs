@@ -31,8 +31,6 @@ namespace Extractor.iOS
 
         string Text { get; }
 
-        string AttachmentId { get; }
-
-        
+        IList<IAttachment> Attachments { get; }
     }
 }

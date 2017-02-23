@@ -7,7 +7,7 @@ using SQLite;
 
 namespace Extractor.iOS.Query
 {
-    internal sealed class GetAttachmentsQuery : IQuery<IList<Attachment>>
+    internal sealed class GetAttachmentsQuery : IQuery<List<Attachment>>
     {
         private readonly SQLiteAsyncConnection connection;
         private readonly string localPathRoot;
@@ -18,7 +18,7 @@ namespace Extractor.iOS.Query
             this.localPathRoot = localPathRoot;
         }
 
-        public async Task<IList<Attachment>> Execute(CancellationToken cancellationToken)
+        public async Task<List<Attachment>> Execute(CancellationToken cancellationToken)
         {
             cancellationToken.ThrowIfCancellationRequested();
 
@@ -50,7 +50,7 @@ namespace Extractor.iOS.Query
             return new Attachment()
             {
                 MessageID = stored.message_id,
-                FileName = fileName,
+                OriginalFileName = fileName,
                 PathOnDisk = localPath
             };
         }
